@@ -1,12 +1,24 @@
 <script>
     import { page } from '$app/stores';
     // const { productId, reviewId } = $page.params.slug;
-    console.log($page.params.slug)
+    // console.log($page.params.slug)
     // 어떤 경로로 해서 들어왔는지 다 알려준다.
 
     const slugArr = $page.params.slug.split('/');
-    console.log(slugArr);
+    console.log($page.params)
+    // params안에는 lang이 있다.
+    const { lang } = $page.params;
 </script>
+
+{#if lang === 'ko'}
+     <!-- content here -->
+     <h1> 안녕 </h1>
+{:else if lang === 'en'}
+    <h1> Hi </h1>
+{:else if lang === 'es'}
+    <h1> Holla </h1>
+{/if}
+
 
 <h1> Docs 페이지 </h1>
 <!-- <h1> 제품{productId}의 리뷰 {reviewId}번</h1> -->
